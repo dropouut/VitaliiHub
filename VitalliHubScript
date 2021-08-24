@@ -1,0 +1,165 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local VitaliiHub = Instance.new("ScreenGui")
+local LogIn = Instance.new("Frame")
+local Key = Instance.new("TextBox")
+local UICorner = Instance.new("UICorner")
+local Submit = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local UICorner_3 = Instance.new("UICorner")
+local Hub = Instance.new("Frame")
+local UICorner_4 = Instance.new("UICorner")
+local Give_Cash = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local Give_Wanted = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
+local Force_re = Instance.new("TextButton")
+local UICorner_7 = Instance.new("UICorner")
+
+--Properties:
+
+VitaliiHub.Name = "VitaliiHub"
+VitaliiHub.Parent = game.CoreGui
+VitaliiHub.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+LogIn.Name = "LogIn"
+LogIn.Parent = VitaliiHub
+LogIn.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+LogIn.Position = UDim2.new(0.437575758, 0, 0.18404907, 0)
+LogIn.Size = UDim2.new(0, 284, 0, 413)
+LogIn.Visible = false
+
+Key.Name = "Key"
+Key.Parent = LogIn
+Key.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+Key.Position = UDim2.new(0.147887319, 0, 0.467312336, 0)
+Key.Size = UDim2.new(0, 200, 0, 50)
+Key.Font = Enum.Font.SourceSansBold
+Key.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
+Key.PlaceholderText = "KEY HERE"
+Key.Text = ""
+Key.TextColor3 = Color3.fromRGB(255, 255, 255)
+Key.TextScaled = true
+Key.TextSize = 14.000
+Key.TextWrapped = true
+
+UICorner.Parent = Key
+
+Submit.Name = "Submit"
+Submit.Parent = LogIn
+Submit.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+Submit.Position = UDim2.new(0.147887319, 0, 0.624697328, 0)
+Submit.Size = UDim2.new(0, 200, 0, 50)
+Submit.Font = Enum.Font.SourceSansBold
+Submit.Text = "Submit"
+Submit.TextColor3 = Color3.fromRGB(255, 255, 255)
+Submit.TextScaled = true
+Submit.TextSize = 14.000
+Submit.TextWrapped = true
+
+UICorner_2.Parent = Submit
+
+UICorner_3.Parent = LogIn
+
+Hub.Name = "Hub"
+Hub.Parent = VitaliiHub
+Hub.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+Hub.Position = UDim2.new(0.276363641, 0, 0.138650313, 0)
+Hub.Size = UDim2.new(0, 778, 0, 70)
+
+UICorner_4.Parent = Hub
+
+Give_Cash.Name = "Give_Cash"
+Give_Cash.Parent = Hub
+Give_Cash.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Give_Cash.Position = UDim2.new(0.0295629818, 0, 0.136781603, 0)
+Give_Cash.Size = UDim2.new(0, 200, 0, 50)
+Give_Cash.Font = Enum.Font.SourceSans
+Give_Cash.Text = "GIVE CASH"
+Give_Cash.TextColor3 = Color3.fromRGB(255, 255, 255)
+Give_Cash.TextSize = 14.000
+
+UICorner_5.Parent = Give_Cash
+
+Give_Wanted.Name = "Give_Wanted"
+Give_Wanted.Parent = Hub
+Give_Wanted.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Give_Wanted.Position = UDim2.new(0.345758319, 0, 0.136781603, 0)
+Give_Wanted.Size = UDim2.new(0, 200, 0, 50)
+Give_Wanted.Font = Enum.Font.SourceSans
+Give_Wanted.Text = "WANTED CHARGER"
+Give_Wanted.TextColor3 = Color3.fromRGB(255, 255, 255)
+Give_Wanted.TextSize = 14.000
+
+UICorner_6.Parent = Give_Wanted
+
+Force_re.Name = "Force_re"
+Force_re.Parent = Hub
+Force_re.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Force_re.Position = UDim2.new(0.65681237, 0, 0.136781603, 0)
+Force_re.Size = UDim2.new(0, 200, 0, 50)
+Force_re.Font = Enum.Font.SourceSans
+Force_re.Text = "Force Reset"
+Force_re.TextColor3 = Color3.fromRGB(255, 255, 255)
+Force_re.TextSize = 14.000
+
+UICorner_7.Parent = Force_re
+
+-- Scripts:
+
+local function UHRPW_fake_script() -- Submit.LocalScript 
+	local script = Instance.new('LocalScript', Submit)
+
+	local sc=script.Parent
+	local box=script.Parent.Parent.Key
+	
+	sc.MouseButton1Click:Connect(function()
+		if box.Text=="bruh" then
+			local fr=script.Parent.Parent.Parent.LogIn
+			fr.Visible=false
+			local ffr = script.Parent.Parent.Parent.Hub
+			ffr.Visible = true
+		end
+	end)
+end
+coroutine.wrap(UHRPW_fake_script)()
+local function JUNG_fake_script() -- Give_Cash.LocalScript 
+	local script = Instance.new('LocalScript', Give_Cash)
+
+	local btn = script.Parent
+	
+	local ui = game.StarterGui.MoneyText
+	
+	btn.MouseButton1Click:Connect(function()
+		ui.Text = "1,000,000,000,000"
+	end)
+end
+coroutine.wrap(JUNG_fake_script)()
+local function YSBDPOE_fake_script() -- Give_Wanted.LocalScript 
+	local script = Instance.new('LocalScript', Give_Wanted)
+
+	local btn = script.Parent
+	
+	local ui = game.Players.LocalPlayer.leaderstats.Wanted
+	
+	btn.MouseButton1Click:Connect(function()
+		ui.Value = "100,000"
+	end)
+end
+coroutine.wrap(YSBDPOE_fake_script)()
+local function SRUSC_fake_script() -- Force_re.LocalScript 
+	local script = Instance.new('LocalScript', Force_re)
+
+	local btn = script.Parent
+	
+	local ui = game.Players.LocalPlayer
+	
+	btn.MouseButton1Click:Connect(function()
+		ui.Character.Humanoid.Health = 0
+		ui:Kick("o")
+	end)
+end
+coroutine.wrap(SRUSC_fake_script)()
